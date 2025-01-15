@@ -58,7 +58,7 @@ const isEdit = ref(false);
 
 const handleDelete = async (id) => {
   try {
-    const deleteData = await apiClient.post(`/genre/${id}?_method=DELEETE`);
+    const deleteData = await apiClient.post(`/genre/${id}?_method=DELETE`);
     console.log(deleteData);
     alert(deleteData.data.message);
   } catch (error) {

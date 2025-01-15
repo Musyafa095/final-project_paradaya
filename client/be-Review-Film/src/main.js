@@ -8,8 +8,11 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 
 const app = createApp(App)
+const pinia = createPinia()
+app.use(pinia)
+pinia.use(({store}) => {
+    store.router = markRaw(router)
 
-app.use(createPinia())
-
+})
 app.use(router)
 app.mount('#app')
